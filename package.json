@@ -29,6 +29,7 @@
     }
   ],
   "main": "server.mjs",
+  "type": "module",
   "scripts": {
     "start": "node --experimental-modules server.mjs"
   },
