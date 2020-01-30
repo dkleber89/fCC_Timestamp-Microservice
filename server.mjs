@@ -25,6 +25,30 @@ app.get('/api/hello', (req, res) => {
   res.json({ greeting: 'hello API' });
 });
 
+app.get('/api/timestamp/:date_string?', (req, res) => {
+  let date = new Date();
+
+  if (!req.params.date_string) {
+    res.json({ unix: date.getTime(), natural: date.toUTCString() });
+    return;
+  }
+
+  if (Number(req.params.date_string)) {
+    date = new Date(parseInt(req.params.date_string, 10));
+
+    res.json({ unix: date.getTime(), natural: date.toUTCString() });
+    return;
+  }
+
+  try {
+    date = new Date(req.params.date_string)
+
+    res.json({ unix: date.getTime(), natural: date.toUTCString() });
+  } catch (e) {
+    res.json({ unix: null, natural: 'Invalid Date' });
+  }
+});
+
 // listen for requests :)
 const port = process.env.PORT || 3000;
 
