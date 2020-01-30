@@ -17,7 +17,7 @@ app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get('/', (req, res) => {
-  res.sendFile('./views/index.html');
+  res.sendFile(`${gDirname(import.meta.url)}/views/index.html`);
 });
 
 // your first API endpoint...
@@ -40,10 +40,10 @@ app.get('/api/timestamp/:date_string?', (req, res) => {
     return;
   }
 
-  date = new Date(req.params.date_string)
+  date = new Date(req.params.date_string);
 
   if (date.toString() === 'Invalid Date') {
-    res.json({ unix: null, utc: date.toString() });
+    res.json({ error: date.toString() });
   } else {
     res.json({ unix: date.getTime(), utc: date.toUTCString() });
   }
