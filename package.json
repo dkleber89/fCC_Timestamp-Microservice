@@ -2,13 +2,13 @@
   "name": "fcc_timestamp-microservice",
   "version": "1.0.0",
   "description": "An FCC Backend Challenge",
+  "homepage": "https://github.com/dkleber89/fCC_Timestamp-Microservice",
   "keywords": [
     "node",
     "hyperdev",
     "express",
     "freecodecamp"
   ],
-  "homepage": "https://github.com/dkleber89/fCC_Timestamp-Microservice",
   "bugs": {
     "url": "https://github.com/dkleber89/fCC_Timestamp-Microservice/issues"
   },
