@@ -1,6 +1,6 @@
 {
   "name": "fcc_timestamp-microservice",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "An FCC Backend Challenge",
   "keywords": [
     "node",
